@@ -65,7 +65,6 @@ nav {
 }
 
 nav ul {
-    list-rule: none;
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -96,6 +95,12 @@ main {
     padding: 20px 0;
 }
 
+/* 1) Richiesta: Testo giustificato nella descrizione */
+.descrizione-giustificata {
+    text-align: justify;
+    hyphens: auto;
+}
+
 h2 {
     color: #333;
     margin-bottom: 20px;
@@ -107,8 +112,35 @@ hr {
     margin: 40px 0;
 }
 
-/* --- SEZIONE DIRETTIVO (Migliorata) --- */
+/* 2) Richiesta: Nuova Sezione Corpi (Griglia a zone) */
+.corpi-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
 
+.zona h3 {
+    font-size: 1rem;
+    color: #d32f2f;
+    border-bottom: 2px solid #f4f4f4;
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.zona ul {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.zona ul li {
+    padding: 4px 0;
+    color: #555;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+/* 3) Richiesta: Sezione Direttivo e Consiglieri migliorata */
 .direttivo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -119,7 +151,7 @@ hr {
 .carica {
     background: #fdfdfd;
     padding: 15px 20px;
-    border-left: 4px solid #d32f2f; /* Barra rossa laterale */
+    border-left: 4px solid #d32f2f;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     transition: all 0.2s ease-in-out;
@@ -128,7 +160,6 @@ hr {
 .carica:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-color: #fff;
 }
 
 .carica strong {
@@ -146,11 +177,32 @@ hr {
     color: #2c3e50;
 }
 
-/* Consiglieri: lista separata da virgole più leggibile */
-.carica p {
-    font-size: 1rem;
-    line-height: 1.5;
+/* Speciale per i Consiglieri (Tag Style) */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.consiglieri-box {
+    background: #f9f9f9 !important;
+    border-left-color: #333 !important; /* Grigio scuro per differenziare */
+}
+
+.consiglieri-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.consiglieri-lista span {
+    background: #fff;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
     color: #444;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 /* --- Sede e Contatti --- */
@@ -198,7 +250,7 @@ footer hr {
         text-align: center;
     }
     
-    .direttivo-grid {
+    .direttivo-grid, .corpi-container {
         grid-template-columns: 1fr;
     }
 
