@@ -193,11 +193,6 @@ hr {
     grid-column: 1 / -1;
 }
 
-.consiglieri-box {
-    background: #f9f9f9 !important;
-    border-left-color: #333 !important;
-}
-
 .consiglieri-lista {
     display: flex;
     flex-wrap: wrap;
