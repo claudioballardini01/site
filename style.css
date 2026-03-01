@@ -95,7 +95,6 @@ main {
     padding: 20px 0;
 }
 
-/* 1) Richiesta: Testo giustificato nella descrizione */
 .descrizione-giustificata {
     text-align: justify;
     hyphens: auto;
@@ -112,7 +111,7 @@ hr {
     margin: 40px 0;
 }
 
-/* 2) Richiesta: Nuova Sezione Corpi (Griglia a zone) */
+/* --- Sezione Corpi (Griglia a zone) --- */
 .corpi-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -140,12 +139,13 @@ hr {
     border-bottom: 1px solid #f9f9f9;
 }
 
-/* 3) Richiesta: Sezione Direttivo e Consiglieri migliorata */
+/* --- Sezioni Card (Direttivo, Sede, Contatti) --- */
 .direttivo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     margin-bottom: 40px;
+    margin-top: 15px;
 }
 
 .carica {
@@ -171,20 +171,31 @@ hr {
     margin-bottom: 4px;
 }
 
-.carica span {
+.carica span, .carica a {
     font-size: 1.1rem;
     font-weight: 700;
     color: #2c3e50;
+    text-decoration: none;
 }
 
-/* Speciale per i Consiglieri (Tag Style) */
+.carica a:hover {
+    color: #d32f2f;
+}
+
+.carica p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Speciale per i Consiglieri e layout estesi */
 .full-width {
     grid-column: 1 / -1;
 }
 
 .consiglieri-box {
     background: #f9f9f9 !important;
-    border-left-color: #333 !important; /* Grigio scuro per differenziare */
+    border-left-color: #333 !important;
 }
 
 .consiglieri-lista {
@@ -203,24 +214,6 @@ hr {
     color: #444;
     border: 1px solid #ddd;
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-
-/* --- Sede e Contatti --- */
-.info-box {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #eee;
-}
-
-.info-box p {
-    margin-bottom: 10px;
-}
-
-.info-box a {
-    color: #d32f2f;
-    text-decoration: none;
-    font-weight: bold;
 }
 
 /* --- Footer --- */
